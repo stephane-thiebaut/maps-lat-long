@@ -36,6 +36,7 @@ function initMap() {
         service.findPlaceFromQuery(element, (results, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
         for (let i = 0; i < results.length; i++) {
+            // ici tu recupere lat et long via la fonction google et tu la passe a une fonction pour afficher plusieur marqueur si tu as besoin
         eqfeed_callback(results.length,results[i].geometry.location.lat(), results[i].geometry.location.lng());
   
         map.setCenter(results[0].geometry.location);
@@ -63,16 +64,16 @@ function initMap() {
  function eqfeed_callback  (result,lat, long) {
     //for (let i = 0; i < results.features.length; i++) {
       //const coords = results.features[i].geometry.coordinates;
-    console.log(result)
-      let test = [{
-          lat : 43.7398974790225,
-          long:  7.415552749133049
-      },{
-          lat :43.77690960290454,
-          long:  7.495396139407746
-      }]
+    //console.log(result)
+      //let test = [{
+         // lat : 43.7398974790225,
+        //  long:  7.415552749133049
+      //},{
+          //lat :43.77690960290454,
+        //  long:  7.495396139407746
+      //}]
   
-      for (let i = 0; i < result; i++) {
+        for (let i = 0; i < result; i++) {
    
            //  if (!place.geometry || !place.geometry.location) return;
 
@@ -85,7 +86,7 @@ function initMap() {
     //infowindow.setContent(place.name || "");
     //infowindow.open(map);
     //});
-    console.log(lat);
+    //console.log(lat);
           const latLng = new google.maps.LatLng(lat , long);
   
       new google.maps.Marker({
